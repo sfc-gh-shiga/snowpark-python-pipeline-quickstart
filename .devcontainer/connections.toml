@@ -2,9 +2,10 @@
 #export SNOWFLAKE_DEFAULT_CONNECTION_NAME="default"
 
 [default]
-account = "myaccount"
-user = "myuser"
-password = "mypassword"
+account = "sfpscogs-shiga_aws_demo"
+user = "shiga"
+authenticator = "SNOWFLAKE_JWT"
+private_key_path = "~/.ssh/rsa_key.p8"
 role = "HOL_ROLE"
 warehouse = "HOL_WH"
 database = "HOL_DB"

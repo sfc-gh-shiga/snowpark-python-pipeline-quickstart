@@ -1,6 +1,6 @@
 name: Deploy Snowpark Apps
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   push:
     branches:
@@ -21,7 +21,7 @@ jobs:
       - name: Setup Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install Python packages
         run: pip install -r requirements.txt
@@ -34,4 +34,5 @@ jobs:
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLKE_AUTHENTICATOR: ${{ secrets.SNOWFLAKE_AUTHENTICATOR }}
         run: python deploy_snowpark_apps.py $GITHUB_WORKSPACE

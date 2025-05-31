@@ -47,7 +47,6 @@ def create_pos_view(session):
                                                         F.col("FIRST_NAME").alias("FRANCHISEE_FIRST_NAME"), \
                                                         F.col("LAST_NAME").alias("FRANCHISEE_LAST_NAME"))
     location = session.table("RAW_POS.LOCATION").select(F.col("LOCATION_ID"))
-
     
     '''
     We can do this one of two ways: either select before the join so it is more explicit, or just join on the full tables.
